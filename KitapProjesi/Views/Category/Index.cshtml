@@ -1,0 +1,42 @@
+﻿@model Kitap_ENTITIES.BookVM.BookVM
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create"> Kategori Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ctlist) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Update", new {  id=item.CategoryID  }) |
+                
+                @Html.ActionLink("Sil", "Delete", new {  id=item.CategoryID  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

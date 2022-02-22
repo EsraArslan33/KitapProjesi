@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kitap_DAL\Kitap_DAL.csproj" />
+    <ProjectReference Include="..\Kitap_ENTITIES\Kitap_ENTITIES.csproj" />
+  </ItemGroup>
+
+</Project>
