@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+
 
 <p>
-    <a asp-action="Create"> Kategori Ekle</a>
+    <a asp-action="Create" class="btn btn-primary"> Kategori Ekle</a>
 </p>
 <table class="table">
     <thead>
@@ -32,9 +32,9 @@
                 @Html.DisplayFor(modelItem => item.CategoryName)
             </td>
             <td>
-                @Html.ActionLink("Düzenle", "Update", new {  id=item.CategoryID  }) |
+                @Html.ActionLink("Düzenle", "Update", new {  id=item.CategoryID  }, new { @class = "btn btn-info" }) 
                 
-                @Html.ActionLink("Sil", "Delete", new {  id=item.CategoryID  })
+                @Html.ActionLink("Sil", "Delete", new {  id=item.CategoryID  }, new { @class = "btn btn-danger" })
             </td>
         </tr>
 }

@@ -33,7 +33,6 @@ namespace KitapProjesi.Controllers
             if (ModelState.IsValid)
             {
                 Category c = new Category();
-                c.CategoryID = cm.Category.CategoryID;
                 c.CategoryName = cm.Category.CategoryName;
                 repcat.Insert(c);
                 repcat.Save();
@@ -54,7 +53,7 @@ namespace KitapProjesi.Controllers
                 Category c = repcat.Find(id);
                 c.CategoryName = cm.Category.CategoryName;
                 repcat.Save();
-                RedirectToAction("Index");
+              return  RedirectToAction("Index");
             }
             return View();
         }
